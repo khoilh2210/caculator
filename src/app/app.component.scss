@@ -1,0 +1,103 @@
+// Define color variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$background-color: #ecf0f1;
+$input-background-color: #ffffff;
+$input-hover-background-color: #bdc3c7;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+$border-color: #dcdcdc;
+$operator-color: #e74c3c;
+$operator-hover-color: #c0392b;
+
+// Define spacing variables
+$padding: 20px;
+$border-radius: 10px;
+$input-height: 70px;
+$input-font-size: 16px;
+$input-padding: 10px;
+$transition-duration: 0.3s;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: $padding;
+  border-radius: $border-radius;
+  box-shadow: 0 0 15px $box-shadow-color;
+  background-color: $background-color;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+form * {
+  box-sizing: border-box;
+}
+
+form table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+form table tr,
+form table td {
+  border: 1px solid $border-color;
+}
+
+form table tr:first-child input {
+  height: 50px;
+  padding: 0 $input-padding;
+  font-weight: 700;
+  background-color: $input-background-color;
+}
+
+form table tr:not(:first-child) td {
+  height: $input-height;
+}
+
+form table tr:not(:first-child) td input {
+  height: 100%;
+}
+
+form table input {
+  width: 100%;
+  display: block;
+  border: 0;
+  font-size: $input-font-size;
+  cursor: pointer;
+  background-color: $input-background-color;
+  transition: background $transition-duration ease-in-out, transform $transition-duration ease-in-out;
+}
+
+form table input:focus {
+  outline: none;
+  transform: scale(1.05);
+}
+
+form table input:hover {
+  background: $input-hover-background-color;
+}
+
+form table input.operator {
+  font-weight: 700;
+  color: #fff;
+  background: $operator-color;
+  cursor: pointer;
+
+  &:hover {
+    background: $operator-hover-color;
+  }
+}
